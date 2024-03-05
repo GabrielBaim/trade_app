@@ -1,4 +1,10 @@
 <?php
+// Permitindo apenas o método POST
+if ($_SERVER["REQUEST_METHOD"] != "POST") {
+    header("HTTP/1.1 405 Method Not Allowed");
+    exit;
+}
+
 // Função para abrir a conexão com o banco de dados SQLite3
 function abrirConexao() {
     $db = new PDO('sqlite:usuarios.db');
@@ -53,6 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Exibe um script para exibir um popup com a mensagem de erro
         echo "<script>alert('Usuário ou senha incorretos.');</script>";
         header('Location: ../login.html');
+        exit;
     }
 
     // Fecha a conexão com o banco de dados
