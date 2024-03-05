@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="login">
+      <img src="./assets/img/logo.png" alt="logo" class="logo" />
+
+      <form action="./php/login.php" method="POST" class="form-login">
+        <input
+          type="text"
+          placeholder="Coloque seu e-mail"
+          id="usuario"
+          name="usuario"
+          required
+        /><br />
+
+        <input
+          type="password"
+          placeholder="Digite sua Senha"
+          id="senha"
+          name="senha"
+          required
+        /><br />
+
+        <div class="checkbox">
+          <input type="checkbox" id="lembrar" name="lembrar" />
+          <span class="checkbox-custom"></span>
+          <label for="lembrar">Lembrar-me</label><br />
+        </div>
+
+        <button type="submit" value="Entrar" class="submit">ENTRAR</button>
+      </form>
+      <a href="#" class="registre"> REGISTRE-SE</a>
+    </div>
+  </body>
+</html>

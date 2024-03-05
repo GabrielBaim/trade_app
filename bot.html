@@ -1,0 +1,280 @@
+<html>
+  <head>
+    <!-- /Yandex.Metrika counter -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://va-mod.ru/js/jquery-3.2.1.min.js"></script>
+    <script src="https://va-mod.ru/js/jquery-ui.min.js"></script>
+    <script src="tv.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./assets/css/bot.css" />
+  </head>
+
+  <body>
+    <!--<canvas id="valx" width="1294" height="789"></canvas>
+    -->
+    <canvas id="valx" width="353" height="500"></canvas>
+
+    <div class="container">
+      <div class="divinp">
+        <div class="select selectdiv">
+          <div id="pair" val="frxEURUSD" class="sel">EUR/USD &#9663;</div>
+          <div class="divscrol" style="display: none">
+            <div
+              title="AUD/CAD - Binary"
+              val="frxAUDCAD"
+              id="frxAUDCAD"
+              data="Binary"
+              class="sel sels"
+            >
+              AUD/CAD
+            </div>
+            <div
+              title="AUD/JPY - Binary"
+              val="frxAUDJPY"
+              id="frxAUDJPY"
+              data="Binary"
+              class="sel sels"
+            >
+              AUD/JPY
+            </div>
+            <div
+              title="AUD/USD - Binary"
+              val="frxAUDUSD"
+              id="frxAUDUSD"
+              data="Binary"
+              class="sel sels"
+            >
+              AUD/USD
+            </div>
+
+            <div
+              title="EUR/USD - Binary"
+              val="frxEURUSD"
+              id="frxEURUSD"
+              data="Binary"
+              class="sel sels"
+            >
+              EUR/USD
+            </div>
+
+            <div
+              title="EUR/GBP - Binary"
+              val="frxEURGBP"
+              id="frxEURGBP"
+              data="Binary"
+              class="sel sels"
+            >
+              EUR/GBP
+            </div>
+            <div
+              title="EUR/JPY - Binary"
+              val="frxEURJPY"
+              id="frxEURJPY"
+              data="Binary"
+              class="sel sels"
+            >
+              EUR/JPY
+            </div>
+            <div
+              title="GBP/USD - Binary"
+              val="frxGBPUSD"
+              id="frxGBPUSD"
+              data="Binary"
+              class="sel sels"
+            >
+              GBP/USD
+            </div>
+            <div
+              title="GBP/JPY - Binary"
+              val="frxGBPJPY"
+              id="frxGBPJPY"
+              data="Binary"
+              class="sel sels"
+            >
+              GBP/JPY
+            </div>
+            <div
+              title="AUD/CAD - Binary"
+              val="frxAUDCAD"
+              id="frxAUDCAD"
+              data="Binary"
+              class="sel sels"
+            >
+              AUD/CAD - OTC
+            </div>
+            <div
+              title="AUD/JPY - Binary"
+              val="frxAUDJPY"
+              id="frxAUDJPY"
+              data="Binary"
+              class="sel sels"
+            >
+              AUD/JPY - OTC
+            </div>
+            <div
+              title="AUD/USD - Binary"
+              val="frxAUDUSD"
+              id="frxAUDUSD"
+              data="Binary"
+              class="sel sels"
+            >
+              AUD/USD - OTC
+            </div>
+
+            <div
+              title="EUR/USD - Binary"
+              val="frxEURUSD"
+              id="frxEURUSD"
+              data="Binary"
+              class="sel sels"
+            >
+              EUR/USD - OTC
+            </div>
+
+            <div
+              title="EUR/GBP - Binary"
+              val="frxEURGBP"
+              id="frxEURGBP"
+              data="Binary"
+              class="sel sels"
+            >
+              EUR/GBP - OTC
+            </div>
+            <div
+              title="EUR/JPY - Binary"
+              val="frxEURJPY"
+              id="frxEURJPY"
+              data="Binary"
+              class="sel sels"
+            >
+              EUR/JPY - OTC
+            </div>
+            <div
+              title="GBP/USD - Binary"
+              val="frxGBPUSD"
+              id="frxGBPUSD"
+              data="Binary"
+              class="sel sels"
+            >
+              GBP/USD - OTC
+            </div>
+            <div
+              title="GBP/JPY - Binary"
+              val="frxGBPJPY"
+              id="frxGBPJPY"
+              data="Binary"
+              class="sel sels"
+            >
+              GBP/JPY - OTC
+            </div>
+          </div>
+        </div>
+
+        <select id="size" class="select">
+          <option value="60" id="60" selected="selected">M1</option>
+          <option value="300" id="300">M5</option>
+          <option value="900" id="900">M15</option>
+          <option value="1800" id="1800">M30</option>
+        </select>
+        <br />
+
+        <div style="display: none">
+          <input id="period" value="10" placeholder="Период" class="select" />
+          <input
+            type="number"
+            id="okrugl"
+            value="8"
+            min="0"
+            max="16"
+            title="How many decimal places to keep in the quote"
+          />
+          <input
+            type="number"
+            id="gorizontal"
+            value="25"
+            min="1"
+            max="9999"
+            title="Specify the interval for drawing round levels"
+          />
+          <input
+            type="list"
+            id="tik"
+            value="1.08619"
+            title="All values of the selected pair from the server"
+          />
+
+          <input
+            type="list"
+            id="tikokrugl"
+            value="1.08619"
+            title="Rounded quote value"
+          />
+        </div>
+      </div>
+      <div class="div2">
+        <p id="oportunidadeDetectada" style="display: none">
+          OPORTUNIDADE DETECTADA
+        </p>
+        <p id="detectando" style="display: none">
+          DETECTANDO PRÓXIMA OPORTUNIDADE…
+        </p>
+        <p id="entrada" style="display: none" class="pulse">ENTRAR AGORA !</p>
+      </div>
+    </div>
+
+    <div class="preload" style="display: none"></div>
+    <script src="./assets/scripts/script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var detectando = document.getElementById("detectando");
+        var entrada = document.getElementById("entrada");
+
+        var sizeSelect = document.getElementById("size");
+        var currentState = null;
+        var intervalId = null;
+
+        function showDetectandoAndEntrada() {
+          detectando.style.display = "block";
+
+          setTimeout(function () {
+            detectando.style.opacity = 0;
+            entrada.style.display = "block";
+
+            setTimeout(function () {
+              entrada.style.display = "none";
+            }, 30000);
+          }, 0);
+        }
+
+        function updateState() {
+          var selectedValue = parseInt(sizeSelect.value);
+          if (currentState !== null) clearInterval(intervalId);
+
+          if (selectedValue === 60) {
+            intervalId = setInterval(showDetectandoAndEntrada, 60000);
+          } else if (selectedValue === 300) {
+            intervalId = setInterval(showDetectandoAndEntrada, 300000);
+          } else if (selectedValue === 900) {
+            intervalId = setInterval(showDetectandoAndEntrada, 900000);
+          } else if (selectedValue === 1800) {
+            intervalId = setInterval(showDetectandoAndEntrada, 1800000);
+          }
+
+          currentState = selectedValue;
+        }
+
+        sizeSelect.addEventListener("change", updateState);
+        updateState();
+      });
+    </script>
+  </body>
+</html>
